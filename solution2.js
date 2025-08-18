@@ -1,7 +1,6 @@
 //This was my first approach. It works too.
-
 function convertToRoman(num) {
-  if (num>=3999) {
+  if (! Number.isInteger(num) || num>3999 || num<=0 ) {
     console.log('Error. Type a number between 1-3999')
     return;
   }
@@ -16,32 +15,17 @@ let hunConverted  = ''
 let tensConverted = ''
 let onesConverted= ''
 
-let passedValue = num; 
 let  padStr = num.toString().padStart(4,'0');
+thouConverted = romanThousands[padStr[0]] 
+hunConverted = romanHundreds[padStr[1]]
+tensConverted=romanTens[padStr[2]]
+onesConverted=romanOnes[padStr[3]]
 
-
-if (passedValue >=1000){
-  
- thouConverted = romanThousands[padStr[0]]
- 
-} 
-
-if (passedValue >= 100) {
- hunConverted = romanHundreds[padStr[1]]
+let sum = `${thouConverted}${hunConverted}${tensConverted}${onesConverted}` ;
+console.log(sum) 
+return sum;
 }
-
-if (passedValue >= 10){
-  tensConverted=romanTens[padStr[2]]
-
 }
-if (passedValue > 0){
-  onesConverted=romanOnes[padStr[3]]
- 
-
-}
-
-console.log(thouConverted+hunConverted+tensConverted+onesConverted)
-
-}
-} 
+convertToRoman(-4);
+convertToRoman(3999); 
 convertToRoman(98); 
