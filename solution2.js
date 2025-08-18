@@ -1,6 +1,6 @@
 //This was my first approach. It works too.
 function convertToRoman(num) {
-  if (! Number.isInteger(num) || num>3999 || num<=0 ) {
+  if (!Number.isInteger(num) || num>3999 || num<=0 ) {
     console.log('Error. Type a number between 1-3999')
     return;
   }
